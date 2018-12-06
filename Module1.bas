@@ -73,7 +73,7 @@ Sub stock()
                 '----------------
                             ' Set the ticker name
                               Ticker_name = ws.Cells(j, 1).Value
-                            ' Print the Ticker Name and Open Price in the Summary Area of Sheet
+                            ' Print the Ticker Name in the Summary Area of Sheet
                               ws.Range("I" & I_Summary_Tab_Row).Value = Ticker_name
                             ' Capture opening price for calc
                               c_open = ws.Range("M" & I_Summary_Tab_Row).Value
@@ -84,7 +84,7 @@ Sub stock()
                               
                             ' Grab the close_price for the ticker for the year and test print
                               Close_Price = ws.Cells(j, 6).Value
-                              ws.Range("N" & I_Summary_Tab_Row).Value = Close_Price
+                              'ws.Range("N" & I_Summary_Tab_Row).Value = Close_Price
                               
                             ' Calculate the difference between open and close for the year
                               Pr_Ch_Yr = ws.Range("M" & I_Summary_Tab_Row) - Close_Price
@@ -217,8 +217,8 @@ Sub stock()
              ws.Range("J1").Value = "Yearly Change"
              ws.Range("K1").Value = "Percent Change"
              ws.Range("L1").Value = "Total Stock Volume"
-             ws.Range("M1").Value = "Open_Price"
-             ws.Range("N1").Value = "Close_Price"
+             ws.Range("M:M").Value = ""
+             'ws.Range("N1").Value = "Close_Price"
              
     '----------------
     ' Create headers for the "highlights" section
